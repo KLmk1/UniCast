@@ -1,0 +1,8 @@
+
+title: Your Site Title
+description: Your site description
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://yourdomain.com" # the base hostname & protocol for your site
+
+exclude:
+  - ../backend # Игнорируем папку backend
