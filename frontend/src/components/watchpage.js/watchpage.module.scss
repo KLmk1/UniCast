@@ -1,0 +1,51 @@
+.watchPage {
+  padding: 20px;
+  background-color: #cacaca; // Светлый фон страницы
+  min-height: 100vh; // Обеспечивает, что страница занимает минимум высоты экрана
+  box-sizing: border-box; // Учитывает паддинги и бордеры в ширину и высоту
+  display: flex;
+}
+
+h1 {
+  color: #343a40;
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.videoContainer {
+  display: flex;
+  flex-direction: column; // Видео и заголовок в колонке
+  align-items: flex-start; // Выравнивание элементов по началу контейнера
+  padding: 50px;
+  width: 99%; // Ширина контейнера
+  max-width: 100%; // Ограничение ширины до 100% родительского контейнера
+  max-height: 70vh; // Максимальная высота видео (75% высоты окна)
+  background-color: #ffffff; // Белый фон контейнера
+  border-radius: 10px; // Округленные углы контейнера
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); // Легкая тень контейнера 
+  overflow: auto; // Добавляет полосы прокрутки, если содержимое превышает размер контейнера
+}
+
+.videoPlayer {
+  background: -webkit-linear-gradient(315deg, rgb(135, 135, 135), rgb(52, 52, 52));
+  background: -moz-linear-gradient(315deg, rgb(135, 135, 135), rgb(52, 52, 52));
+  background: linear-gradient(315deg, rgb(135, 135, 135), rgb(52, 52, 52));
+  border-radius: 10px;
+  width: 70%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  max-width: 100%; // Ограничение ширины до 100% родительского контейнера
+  max-height: 70vh; // Максимальная высота видео (75% высоты окна)
+  height: auto; // Автоматическая высота для сохранения пропорций
+  transition: box-shadow 0.3s ease-in-out; // Плавное изменение тени
+  min-height: 450px;
+  &:hover {
+    box-shadow: 0 5px 25px rgba(71, 58, 58, 0.425); // Увеличение тени при наведении
+  }
+}
+
+.noVideo {
+  color: #6c757d; // Цвет текста для сообщения об отсутствии видео
+  font-size: 18px;
+  margin-top: 20px;
+}
