@@ -33,8 +33,10 @@ jobs:
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
         with:
-          source: ./frontend/
+          source: ./frontend/          # Убедитесь, что здесь правильно указан путь к папке с вашим фронтендом
           destination: ./_site
+          # Игнорируем папку backend
+          exclude: backend
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
 
