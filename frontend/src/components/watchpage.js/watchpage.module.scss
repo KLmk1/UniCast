@@ -1,51 +1,142 @@
 .watchPage {
   padding: 20px;
-  background-color: #cacaca; // Светлый фон страницы
-  min-height: 100vh; // Обеспечивает, что страница занимает минимум высоты экрана
-  box-sizing: border-box; // Учитывает паддинги и бордеры в ширину и высоту
+  background-color: #f0f0f0; /* Light gray background */
+  min-height: 100vh;
+  box-sizing: border-box;
   display: flex;
-}
-
-h1 {
-  color: #343a40;
-  margin-bottom: 20px;
-  font-size: 24px;
-  font-weight: bold;
+  justify-content: center;
+  align-items: center;
 }
 
 .videoContainer {
   display: flex;
-  flex-direction: column; // Видео и заголовок в колонке
-  align-items: flex-start; // Выравнивание элементов по началу контейнера
+  flex-direction: column;
+  align-items: flex-start; /* Corrected alignment */
   padding: 50px;
-  width: 99%; // Ширина контейнера
-  max-width: 100%; // Ограничение ширины до 100% родительского контейнера
-  max-height: 70vh; // Максимальная высота видео (75% высоты окна)
-  background-color: #ffffff; // Белый фон контейнера
-  border-radius: 10px; // Округленные углы контейнера
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); // Легкая тень контейнера 
-  overflow: auto; // Добавляет полосы прокрутки, если содержимое превышает размер контейнера
+  width: 95%;
+  min-height: 95vh;
+  background-color: #ffffff; /* White background for contrast */
+  border-radius: 15px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .videoPlayer {
-  background: -webkit-linear-gradient(315deg, rgb(135, 135, 135), rgb(52, 52, 52));
-  background: -moz-linear-gradient(315deg, rgb(135, 135, 135), rgb(52, 52, 52));
-  background: linear-gradient(315deg, rgb(135, 135, 135), rgb(52, 52, 52));
-  border-radius: 10px;
-  width: 70%;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  max-width: 100%; // Ограничение ширины до 100% родительского контейнера
-  max-height: 70vh; // Максимальная высота видео (75% высоты окна)
-  height: auto; // Автоматическая высота для сохранения пропорций
-  transition: box-shadow 0.3s ease-in-out; // Плавное изменение тени
-  min-height: 450px;
-  &:hover {
-    box-shadow: 0 5px 25px rgba(71, 58, 58, 0.425); // Увеличение тени при наведении
-  }
+  background-color: #4d4855;
+  background-image: linear-gradient(147deg, #4d4855 0%, #000000 74%);
+  border-radius: 15px;
+  width: 70%; /* Set to 100% for responsiveness */
+  height: auto;
+  max-height: 700px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.noVideo {
-  color: #6c757d; // Цвет текста для сообщения об отсутствии видео
-  font-size: 18px;
+.videoPlayer:hover {
+  transform: scale(1.01); /* Slight scale on hover */
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+  font-size: 28px;
+  color: #333333;
+  display: inline-block;
   margin-top: 20px;
+  font-family: sans-serif;
+  font-weight: 600;
+  font-size: 25px;
+  margin-bottom: 0;
+}
+
+.buttonGroup {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.undervideo {
+  width: 70%;
+}
+
+
+.buttons {
+  float: right;
+  
+  vertical-align: middle;
+}
+
+button {
+  display: inline-block;
+  margin-right: 20px;
+  justify-content: center;
+  background-color: #ffffff; /* Light gray for buttons */
+  color: #333;
+  border: none;
+  padding: 10px 20px;
+  width: auto;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: solid 1px gray;
+}
+
+button:hover {
+  background-color: #b3b3b3; /* Darker gray on hover */
+}
+
+button.dislike {
+  background-color: #e0e0e0; /* Lighter gray for dislike */
+}
+
+button.dislike:hover {
+  background-color: #b3b3b3; /* Darker gray on hover */
+}
+
+.viewCount {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #000000;
+}
+
+.likeimg {
+  height: 20px;
+  margin: 5px;
+}
+
+.highinfo {
+  display: inline-block;
+  width: 100%;
+}
+
+.views {
+  display: inline-block;
+  font-family: sans-serif;
+  font-weight: lighter;
+  margin: 0;
+}
+
+.compviews {
+  margin-top: 10px;
+}
+
+.desc {
+  font-family: sans-serif;
+  font-weight: lighter;
+}
+
+.info {
+  margin-top: 20px;
+  justify-content: center;
+  background-color: #ffffff; /* Light gray for buttons */
+  color: #333;
+  padding: 10px;
+  width: auto;
+  border-radius: 15px;
+  cursor: pointer;
+  font-size: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: solid 1px gray;
 }

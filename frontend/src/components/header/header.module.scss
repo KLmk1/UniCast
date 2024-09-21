@@ -2,8 +2,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
-  background-color: #333;
+  padding: 0.2rem;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: rgb(188,152,126);
   color: #fff;
 
   .logo {
@@ -18,25 +20,27 @@
 
   .searchForm {
     display: flex;
-
     .searchInput {
       padding: 0.5rem;
-      border-radius: 4px 0 0 4px;
+      border-radius: 10px 0 0 4px;
       border: none;
       outline: none;
-      width: 200px;
+      width: 35vw;
     }
 
     .searchButton {
+      -webkit-box-shadow: -4px 0px 24px -17px rgba(34, 60, 80, 1) inset;
+      -moz-box-shadow: -4px 0px 24px -17px rgba(34, 60, 80, 1) inset;
+      box-shadow: -4px 0px 24px -17px rgba(34, 60, 80, 1) inset;
       padding: 0.5rem;
-      background-color: #007bff;
+      background-color: #ffffff;
       color: white;
       border: none;
-      border-radius: 0 4px 4px 0;
+      border-radius: 0 10px 4px 0;
       cursor: pointer;
-
+      background-color: rgb(188,152,126);
       &:hover {
-        background-color: #0056b3;
+        background-color: rgb(155, 121, 96);
       }
     }
   }

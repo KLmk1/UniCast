@@ -28,7 +28,7 @@ const Header = () => {
           onChange={(e) => setQuery(e.target.value)}
           className={styles.searchInput}
         />
-        <button type="submit" className={styles.searchButton}>Search</button>
+        <button type="submit" className={styles.searchButton}>🔎</button>
       </form>
 
       <nav className={styles.nav}>

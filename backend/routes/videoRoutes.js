@@ -1,50 +1,28 @@
 const express = require('express');
+const videoController = require('../controllers/videoController');
+const multer = require('../middlewares/multerConfig');  // Multer middleware для загрузки файлов
+
 const router = express.Router();
-const Video = require('../models/Video'); // Подключаем модель Video
 
-// Увеличение количества просмотров
-router.post('/videos/:id/view', async (req, res) => {
-  try {
-    const video = await Video.findById(req.params.id);
-    if (!video) {
-      return res.status(404).json({ error: 'Video not found' });
-    }
-    video.views += 1;
-    await video.save();
-    res.json(video);
-  } catch (error) {
-    res.status(500).json({ error: 'Failed to update views' });
-  }
-});
+// Маршрут для загрузки видео
+router.post('/upload', multer.single('video'), videoController.uploadVideo);
 
-// Увеличение количества лайков
-router.post('/videos/:id/like', async (req, res) => {
-  try {
-    const video = await Video.findById(req.params.id);
-    if (!video) {
-      return res.status(404).json({ error: 'Video not found' });
-    }
-    video.likes += 1;
-    await video.save();
-    res.json(video);
-  } catch (error) {
-    res.status(500).json({ error: 'Failed to update likes' });
-  }
-});
+// Маршрут для получения всех видео
+router.get('/', videoController.getVideos);
 
-// Увеличение количества дизлайков
-router.post('/videos/:id/dislike', async (req, res) => {
-  try {
-    const video = await Video.findById(req.params.id);
-    if (!video) {
-      return res.status(404).json({ error: 'Video not found' });
-    }
-    video.dislikes += 1;
-    await video.save();
-    res.json(video);
-  } catch (error) {
-    res.status(500).json({ error: 'Failed to update dislikes' });
-  }
-});
+// Маршрут для поиска видео
+router.get('/search', videoController.searchVideos);
+
+// Маршрут для получения одного видео по ID
+router.get('/:id', videoController.getVideoById);
+
+// Маршрут для увеличения просмотров
+router.post('/:id/view', videoController.incrementViews);
+
+// Маршрут для лайка видео
+router.post('/:id/like', videoController.likeVideo);
+
+// Маршрут для удаления видео
+router.delete('/:id', videoController.deleteVideo);
 
 module.exports = router;
