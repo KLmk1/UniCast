@@ -46,6 +46,8 @@ h2 {
   font-weight: 600;
   font-size: 25px;
   margin-bottom: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .buttonGroup {
@@ -125,11 +127,11 @@ button.dislike:hover {
 .desc {
   font-family: sans-serif;
   font-weight: lighter;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .info {
-  margin-top: 20px;
-  justify-content: center;
   background-color: #ffffff; /* Light gray for buttons */
   color: #333;
   padding: 10px;

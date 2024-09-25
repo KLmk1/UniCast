@@ -138,8 +138,9 @@ const WatchPage = () => {
           </video>
         )}
         <div className={styles.undervideo}>
-          
-        {video && <h2>{video.title}</h2>}
+          <div className={styles.title}>
+            {video && <h2>{video.title}</h2>}
+          </div>
           <div className={styles.highinfo}>
             <div className={styles.buttons}> 
               <button onClick={handleLike} disabled={loadingAction}>
