@@ -125,11 +125,16 @@ button.dislike:hover {
 }
 
 .desc {
-  font-family: sans-serif;
-  font-weight: lighter;
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+.desc.expanded {
+  white-space: pre-wrap; /* Для многострочного текста */
+  word-wrap: break-word; /* Перенос длинных слов */
+  word-break: break-word; /* Перенос слов, если они слишком длинные */
+}
+
 
 .info {
   background-color: #ffffff; /* Light gray for buttons */
@@ -141,4 +146,12 @@ button.dislike:hover {
   font-size: 16px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   border: solid 1px gray;
+  transition: max-height 0.3s ease-in-out; /* Плавное изменение высоты */
+  max-height: 100px; /* Изначально ограниченная высота */
+  overflow: hidden; /* Скрываем содержимое */
+}
+
+.info.expanded {
+  max-height: 1000px;
+  height: auto;
 }

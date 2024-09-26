@@ -20,25 +20,32 @@
 
   .searchForm {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    margin: 0 auto;
+
     .searchInput {
-      padding: 0.5rem;
-      border-radius: 10px 0 0 4px;
+      padding: 0.75rem; /* Увеличиваем отступ для выравнивания по высоте */
+      border-radius: 10px 0 0 10px; /* Закругления только с одной стороны */
       border: none;
       outline: none;
       width: 35vw;
+      height: 100%; /* Высота поля ввода */
     }
 
     .searchButton {
-      -webkit-box-shadow: -4px 0px 24px -17px rgba(34, 60, 80, 1) inset;
-      -moz-box-shadow: -4px 0px 24px -17px rgba(34, 60, 80, 1) inset;
-      box-shadow: -4px 0px 24px -17px rgba(34, 60, 80, 1) inset;
       padding: 0.5rem;
       background-color: #ffffff;
-      color: white;
+      color: rgb(188,152,126);
       border: none;
-      border-radius: 0 10px 4px 0;
+      border-radius: 0 10px 10px 0; /* Закругления только с другой стороны */
       cursor: pointer;
-      background-color: rgb(255, 255, 255);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      max-height: 70%; /* Высота поля ввода */
+
       &:hover {
         background-color: rgb(184, 153, 131);
       }
@@ -61,6 +68,21 @@
           text-decoration: underline;
         }
       }
+    }
+  }
+
+  .avatarContainer {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+
+    .avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-left: 1rem;
+      cursor: pointer;
     }
   }
 }

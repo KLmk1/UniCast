@@ -67,6 +67,7 @@ const UploadPage = () => {
       <h1>Upload Video</h1>
       <input
         type="text"
+        maxLength={200}
         name="videoTitle"
         placeholder="Enter video title"
         value={formData.videoTitle}

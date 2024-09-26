@@ -36,6 +36,11 @@ const Header = () => {
           <li><Link to="/upload">Upload</Link></li>
         </ul>
       </nav>
+
+      {/* Аватарка пользователя */}
+      <div className={styles.avatarContainer}>
+        <img src="" alt="User Avatar" className={styles.avatar} />
+      </div>
     </header>
   );
 };
