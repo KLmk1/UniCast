@@ -1,10 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import styles from './header.module.scss'; // Импортируем стили
+import styles from './header.module.scss';
 
 const Header = () => {
   const [query, setQuery] = useState('');
+  const [user, setUser] = useState(null);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    // Получаем данные пользователя из localStorage
+    const userData = localStorage.getItem('user');
+    if (userData) {
+      setUser(JSON.parse(userData));
+    }
+  }, []);
 
   const handleSearch = (e) => {
     e.preventDefault();
@@ -18,8 +27,7 @@ const Header = () => {
       <div className={styles.logo}>
         <Link to="/">UniCast</Link>
       </div>
-      
-      {/* Поисковая строка */}
+
       <form onSubmit={handleSearch} className={styles.searchForm}>
         <input
           type="text"
@@ -33,14 +41,28 @@ const Header = () => {
 
       <nav className={styles.nav}>
         <ul>
-          <li><Link to="/upload">Upload</Link></li>
+          <li ><Link to="/upload" className={styles.uploads}><img src='upload.png' className={styles.upload}/></Link></li>
+          <li>
+            <Link to="/login">
+              <div className={styles.avatarContainer}>
+                {user ? (
+                  <img
+                    src={user.avatar}
+                    alt={`${user.name}'s Avatar`}
+                    className={styles.avatar}
+                  />
+                ) : (
+                  <img
+                    src="https://via.placeholder.com/45"
+                    alt="Default Avatar"
+                    className={styles.avatar}
+                  />
+                )}
+              </div>
+            </Link>
+          </li>
         </ul>
       </nav>
-
-      {/* Аватарка пользователя */}
-      <div className={styles.avatarContainer}>
-        <img src="" alt="User Avatar" className={styles.avatar} />
-      </div>
     </header>
   );
 };
