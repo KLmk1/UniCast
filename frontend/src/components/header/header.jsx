@@ -25,7 +25,7 @@ const Header = () => {
   return (
     <header className={styles.header}>
       <div className={styles.logo}>
-        <Link to="/">UniCast</Link>
+        <Link to="/UniCast/">UniCast</Link>
       </div>
 
       <form onSubmit={handleSearch} className={styles.searchForm}>
@@ -41,9 +41,9 @@ const Header = () => {
 
       <nav className={styles.nav}>
         <ul>
-          <li ><Link to="/upload" className={styles.uploads}><img src='upload.png' className={styles.upload}/></Link></li>
+          <li ><Link to="/UniCast/upload" className={styles.uploads}><img src='upload.png' className={styles.upload}/></Link></li>
           <li>
-            <Link to="/login">
+            <Link to="/UniCast/login">
               <div className={styles.avatarContainer}>
                 {user ? (
                   <img

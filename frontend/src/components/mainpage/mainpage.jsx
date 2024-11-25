@@ -23,7 +23,7 @@ const MainPage = () => {
     <div className={styles.mainPage}>
       <div className={styles.videoGrid}>
         {videos.map((video) => (
-          <Link to={`/watch?v=${video._id}`} className={styles.linktovid} key={video._id}>
+          <Link to={`/UniCast/watch?v=${video._id}`} className={styles.linktovid} key={video._id}>
             <div className={styles.videoCard}>
               <div className={styles.videoWrapper}>
                 <video controls className={styles.videoThumbnail}>

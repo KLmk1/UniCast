@@ -1,5 +1,5 @@
 const Video = require('../models/Video');
-const fs = require('fs').promises;  // Используем промисы для работы с fs
+const fs = require('fs').promises;
 const path = require('path');
 
 // Загрузка видео
@@ -19,8 +19,6 @@ exports.uploadVideo = async (req, res) => {
     res.status(500).json({ error: 'Failed to upload video' });
   }
 };
-
-
 
 // Получение всех видео
 exports.getVideos = async (req, res) => {
