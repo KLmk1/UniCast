@@ -13,7 +13,7 @@ const app = express();
 const PORT = process.env.PORT || 5000; // Используем переменную окружения или 5000 по умолчанию
 
 app.use(cors({
-  origin: 'http://localhost:5173', // Укажи фронтенд
+  origin: 'http://localhost:5173', // Укажи фрнтенд
 }));
 
 app.use(express.json()); // Для обработки JSON
